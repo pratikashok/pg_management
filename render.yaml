@@ -14,6 +14,6 @@ services:
 
 databases:
   - name: pg-management-db
-    databaseName: pg_management
+    databaseName: tenant_management
     user: pgadmin
     plan: free
