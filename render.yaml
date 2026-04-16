@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: pg-management-api
+    runtime: go
+    plan: free
+    buildCommand: go build -tags netgo -ldflags '-s -w' -o app .
+    startCommand: ./app
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: pg-management-db
+          property: connectionString
+
+databases:
+  - name: pg-management-db
+    databaseName: pg_management
+    user: pgadmin
+    plan: free

@@ -1,0 +1,61 @@
+{
+  "info": {
+    "name": "PG Management System",
+    "_postman_id": "1d5bf705-6679-4f3c-ae24-c6288c9b867b",
+    "description": "Collection for the first two tenant APIs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Tenants",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/tenants",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tenants"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Tenant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"full_name\": \"Rahul Sharma\",\n  \"phone\": \"+919876543210\",\n  \"email\": \"rahul@example.com\",\n  \"room_number\": \"A-203\",\n  \"monthly_rent\": 8500,\n  \"security_deposit\": 15000,\n  \"check_in_date\": \"2026-04-16\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/tenants",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tenants"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
